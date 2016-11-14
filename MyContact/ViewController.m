@@ -18,9 +18,14 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    self.count.delegate = self;
   // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.count resignFirstResponder];
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
